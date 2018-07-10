@@ -1,4 +1,4 @@
-package com.rain.annotationdemo.proxy;
+package com.rain.annotation.proxy;
 
 import java.lang.reflect.Proxy;
 
@@ -12,7 +12,6 @@ public class TestProxy {
         Animal animal = new Animal();
         ClassLoader classLoader = animal.getClass().getClassLoader();
         Class<?>[] interfaces = animal.getClass().getInterfaces();
-        // 生成代理类对象
         Object proxy = Proxy.newProxyInstance(classLoader, interfaces, new ProxyHandler(animal));
         Fly fly = (Fly) proxy;
         fly.fly();

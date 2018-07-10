@@ -1,7 +1,12 @@
-package com.rain.annotationdemo.annotation;
+package com.rain.annotation2.utils;
+
 
 import android.app.Activity;
 import android.view.View;
+
+import com.rain.annotation.annotation.EventType;
+import com.rain.annotation.annotation.InjectView;
+import com.rain.annotation2.utils.annotation.onClick;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -42,8 +47,11 @@ public class Util {
                 // 找到findviewById方法
                 try {
                     Method findViewById = aClass.getMethod("findViewById", int.class);
+                    // 为当前的field设置值
                     findViewById.setAccessible(true);
-                    findViewById.invoke(activity, value);
+                    View view = (View) findViewById.invoke(activity, value);
+                    field.setAccessible(true);
+                    field.set(activity,view);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
 

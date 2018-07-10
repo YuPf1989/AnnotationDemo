@@ -1,4 +1,4 @@
-package com.rain.annotationdemo.proxy;
+package com.rain.annotation.proxy;
 
 /**
  * Author:rain

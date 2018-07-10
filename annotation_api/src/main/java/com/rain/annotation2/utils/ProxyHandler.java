@@ -1,4 +1,4 @@
-package com.rain.annotationdemo.annotation;
+package com.rain.annotation2.utils;
 
 import android.app.Activity;
 

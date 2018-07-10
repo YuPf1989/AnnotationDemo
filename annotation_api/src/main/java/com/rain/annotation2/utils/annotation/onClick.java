@@ -1,6 +1,9 @@
-package com.rain.annotationdemo.annotation;
+package com.rain.annotation2.utils.annotation;
+
 
 import android.view.View;
+
+import com.rain.annotation.annotation.EventType;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

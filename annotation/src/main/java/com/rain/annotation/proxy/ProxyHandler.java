@@ -1,16 +1,12 @@
-package com.rain.annotationdemo.proxy;
-
-import android.util.Log;
+package com.rain.annotation.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
 /**
  * Author:rain
  * Date:2018/7/5 15:45
  * Description:
- * 动态代理
  */
 public class ProxyHandler implements InvocationHandler {
     private static final String TAG  = "ProxyHandler";

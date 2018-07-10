@@ -1,10 +1,9 @@
-package com.rain.annotationdemo.proxy;
+package com.rain.annotation.proxy;
 
 /**
  * Author:rain
  * Date:2018/7/5 15:38
  * Description:
- * 演示的为静态代理
  */
 public class AnimalProxy implements Fly,Run{
     private Animal animal;

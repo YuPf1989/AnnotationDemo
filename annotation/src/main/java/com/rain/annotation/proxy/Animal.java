@@ -1,6 +1,5 @@
-package com.rain.annotationdemo.proxy;
+package com.rain.annotation.proxy;
 
-import android.util.Log;
 
 /**
  * Author:rain
