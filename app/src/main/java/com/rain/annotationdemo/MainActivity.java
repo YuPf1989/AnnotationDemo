@@ -1,5 +1,6 @@
 package com.rain.annotationdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
     @onClick({R.id.btn_bindClick, R.id.btn_bindView,R.id.btn_apt})
     public void onClick(View view) {
-        Toast.makeText(this, "" + view.getId(), Toast.LENGTH_SHORT).show();
         switch (view.getId()) {
             case R.id.btn_bindClick:
                 break;
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.btn_apt:
+                startActivity(new Intent(this,ActivityTwo.class));
                 break;
         }
     }

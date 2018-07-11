@@ -26,6 +26,7 @@ import javax.lang.model.element.TypeElement;
 /**
  * 参见
  * https://www.jianshu.com/p/9616f4a462bd
+ * https://blog.csdn.net/spinchao/article/details/72972185 比较完整
  * java lib :里边只有java文件，打包后是jar
  * Android library:里边不仅有java文件，还允许有资源文件，打包后为aar,并且有安卓lib
  * module图标也有所不同
@@ -46,7 +47,7 @@ public class AnnotationProcessor extends AbstractProcessor {
 
     @Override
     public SourceVersion getSupportedSourceVersion() {
-        return super.getSupportedSourceVersion();
+        return SourceVersion.latestSupported();
     }
 
     @Override
