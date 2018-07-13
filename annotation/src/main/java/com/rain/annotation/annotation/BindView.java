@@ -7,14 +7,13 @@ import java.lang.annotation.Target;
 
 /**
  * Author:rain
- * Date:2018/7/6 10:18
+ * Date:2018/7/12 16:40
  * Description:
- * 该java lib主要是定义注解
+ * 在activity中绑定view
+ * 与InjectView不同的是使用编译时注解
  */
-@Target(ElementType.ANNOTATION_TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface EventType {
-    Class listenerType();
-    String listenerSetter();
-    String methodName();
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.CLASS)
+public @interface BindView {
+    int value();
 }

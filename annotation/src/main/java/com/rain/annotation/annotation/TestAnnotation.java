@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  *
  */
 @Target(ElementType.TYPE)// 表示作用于class 类
-@Retention(RetentionPolicy.CLASS)// 作用域为编译时
+@Retention(RetentionPolicy.CLASS) //   作用域为编译时
 public @interface TestAnnotation {
 
 }

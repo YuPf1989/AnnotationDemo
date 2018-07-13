@@ -31,7 +31,7 @@ public class ActivityInjectProcesser extends AbstractProcessor {
 
     private Filer filer;// 文件相关的辅助类
     private Elements elementUtils;// 元素相关的辅助类
-    private TreeMap<String, AnnotatedClass> annotatedClassMap;// 缓存通过反射查找的注解的类，减少反射使用
+    private TreeMap<String, AnnotatedClass> annotatedClassMap;// 缓存已经生成的java文件类，避免重复生成导致的错误
     private Messager messager;// 日志相关的辅助类
 
     @Override
@@ -49,15 +49,17 @@ public class ActivityInjectProcesser extends AbstractProcessor {
     @Override
     public synchronized void init(ProcessingEnvironment processingEnvironment) {
         super.init(processingEnvironment);
+        System.out.println("init");
         filer = processingEnvironment.getFiler();
         elementUtils = processingEnvironment.getElementUtils();
         messager = processingEnvironment.getMessager();
         annotatedClassMap = new TreeMap<>();
     }
 
-    // 该方法是核心方法，在这里处理的你的业务。检测类别参数，生成java文件等
+    // 该方法是核心方法，在这里处理你的业务。检测类别参数，生成java文件等
     @Override
     public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
+        System.out.println("process....");
         annotatedClassMap.clear();
         // 查找TestAnnotation注解标记的元素
         Set<? extends Element> elements = roundEnvironment.getElementsAnnotatedWith(TestAnnotation.class);

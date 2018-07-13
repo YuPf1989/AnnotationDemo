@@ -10,6 +10,7 @@ import java.lang.reflect.Method;
  * Author:rain
  * Date:2018/7/11 10:57
  * Description:
+ * 工具类，用于注解处理器生成的java文件中方法的调用
  * 联合TestAnnotation,test_compiler查看
  * 在运行时通过反射调用生成build的类
  */
@@ -24,7 +25,6 @@ public class InjectActivity {
             Object inject = injectMap.get(name);
             if (inject == null) {
                 // 加载build生成的类
-                // TODO: 2018/7/11 $$表示内部类?
                 Class<?> aClass = Class.forName(name + "$$InjectActivity");
                 inject = aClass.newInstance();
                 injectMap.put(name, inject);

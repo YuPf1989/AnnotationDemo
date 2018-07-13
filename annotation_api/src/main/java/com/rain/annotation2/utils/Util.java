@@ -18,6 +18,7 @@ import java.lang.reflect.Proxy;
  * Date:2018/7/6 10:34
  * Description:
  * 执行injectview具体实现逻辑
+ * 运行时的注解，会影响到效率
  */
 public class Util {
     /**
